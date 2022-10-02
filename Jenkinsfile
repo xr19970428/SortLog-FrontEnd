@@ -17,7 +17,7 @@ pipeline {
 
         stage('Build and Export') {
             steps {
-                sh "npm run export"
+                sh "yarn export"
             }
         }
         stage('deploy') {
