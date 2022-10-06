@@ -8,10 +8,10 @@ pipeline {
                 sh "yarn install"
             }
         }
+        
         stage('Test') {
             steps {
                 echo "Test"
-
             }
         }
 
@@ -20,6 +20,7 @@ pipeline {
                 sh "yarn export"
             }
         }
+        
         stage('deploy') {
             steps {
               withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awscredentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
