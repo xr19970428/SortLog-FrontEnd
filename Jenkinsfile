@@ -29,5 +29,6 @@ pipeline {
                sh "aws s3 sync /var/jenkins_home/workspace/frontend/out s3://sortlogfrontend"
             }
         }
-    }
+     }
+   }
 }
