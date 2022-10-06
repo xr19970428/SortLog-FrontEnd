@@ -22,7 +22,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-              withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: "awscredentials'', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+              withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awscredentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
     // some block}
                sh "aws configure set region $AWS_DEFAULT_REGION" 
                sh "aws s3 sync /var/jenkins_home/workspace/frontend/out s3://sortlogfrontend"
